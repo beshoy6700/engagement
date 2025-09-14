@@ -5,9 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Engagement Invitation — 18/9/2025</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Meta tags (Open Graph & Twitter) remain unchanged... -->
+  <!-- 🔍 SEO + Social Media Meta Tags -->
+  <meta name="description" content="You're invited to the engagement of Beshoy & Joly on September 18, 2025. Click to view full details and location.">
+
+  <!-- 🌐 Open Graph for Facebook/WhatsApp -->
+  <meta property="og:title" content="You're Invited: Beshoy & Joly's Engagement 🎉">
+  <meta property="og:description" content="Join us on 18/09/2025 at St. Anthony Church. Your presence means the world to us!">
+  <meta property="og:image" content="https://beshoy6700.github.io/engagement/preview.jpg">
+  <meta property="og:url" content="https://beshoy6700.github.io/engagement/">
+  <meta property="og:type" content="website">
+
+  <!-- 🐦 Twitter Meta -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="You're Invited: Beshoy & Joly's Engagement 💍">
+  <meta name="twitter:description" content="Click to view the full invitation and location.">
+  <meta name="twitter:image" content="https://beshoy6700.github.io/engagement/preview.jpg">
 
   <style>
     body {
@@ -56,7 +70,7 @@
 
     <!-- Image -->
     <div class="flex justify-center mb-6">
-      <img src="photo.jpg" alt="Our photo" class="w-40 h-40 rounded-full object-cover shadow-lg border-4 border-white" alt="Our photo" onerror="this.style.display='none';"/>
+      <img src="photo.jpg" alt="Our photo" class="w-40 h-40 rounded-full object-cover shadow-lg border-4 border-white" onerror="this.style.display='none';"/>
     </div>
 
     <!-- English Content (default) -->
@@ -80,7 +94,7 @@
 
       <div class="mb-6">
         <div class="text-sm text-gray-500">⏳ Countdown to the event:</div>
-        <div id="countdown-en" class="countdown mt-2">0 days • 0 hours • 0 minutes</div>
+        <div id="countdown-en" class="countdown mt-2">0 days • 0 hours • 0 minutes • 0 seconds</div>
       </div>
 
       <div class="sticky-btn">
@@ -93,17 +107,17 @@
       <small class="block mt-6 text-gray-400">This digital invite was lovingly crafted for you.</small>
     </div>
 
-    <!-- Arabic Content (hidden by default) -->
+    <!-- Arabic Content -->
     <div id="ar-content" class="hidden text-center" dir="rtl">
       <p class="mt-2 mb-4 font-semibold text-indigo-700">
         "فَدَخَلَ وَسَلَّمَ عَلَيْهِ وَقَالَ: «لِيَكُنْ لَكَ فَرَحٌ دَائِمٌ»." (طوبيا ١١:١٧)
       </p>
 
       <h1 class="text-2xl font-bold mb-2 text-indigo-700">
-        يشرفنا دعوتكم لمشاركتنا فرحتنا 💍
+        يشرفنا دعوتكم لمشاركتنا خطوبتنا 💍
       </h1>
     
-      <p class="text-gray-600 mb-4">الخطوبة — حضوركم يسعد قلوبنا ويكمّل فرحتنا.</p>
+      <p class="text-gray-600 mb-4"> حضوركم يسعد قلوبنا ويكمّل فرحتنا.</p>
 
       <ul class="mb-6 space-y-2 text-center">
         <li><span class="font-semibold">اليوم:</span> الخميس 18/9/2025</li>
@@ -114,7 +128,7 @@
 
       <div class="mb-6">
         <div class="text-sm text-gray-500">⏳ العد التنازلي للموعد:</div>
-        <div id="countdown-ar" class="countdown mt-2">0 يوم • 0 ساعة • 0 دقيقة</div>
+        <div id="countdown-ar" class="countdown mt-2">0 يوم • 0 ساعة • 0 دقيقة • 0 ثانية</div>
       </div>
 
       <div class="sticky-btn">
@@ -157,24 +171,24 @@
     function updateCountdown() {
       const now = new Date();
       const diff = eventDate - now;
+
       if (diff <= 0) {
         cdEn.textContent = '🥳 It’s time — see you there!';
         cdAr.textContent = '🥳 اللحظة وصلت — ننتظركم!';
         return;
       }
+
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
       const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      cdEn.innerHTML = `${days} days • ${hours} hours • ${minutes}
-  minutes`;
-      cdAr.innerHTML = `${days} يوم • ${hours} ساعة • ${minutes} دقيقة`;
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      cdEn.innerHTML = `${days} days • ${hours} hours • ${minutes} minutes • ${seconds} seconds`;
+      cdAr.innerHTML = `${days} يوم • ${hours} ساعة • ${minutes} دقيقة • ${seconds} ثانية`;
     }
 
-    // بدء التشغيل
     updateCountdown();
     setInterval(updateCountdown, 1000);
   </script>
 </body>
 </html>
-
-      
