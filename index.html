@@ -1,11 +1,14 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>دعوة خطوبة — 18/9/2025</title>
+  <title>Engagement Invitation — 18/9/2025</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Meta tags (Open Graph & Twitter) remain unchanged... -->
+
   <style>
     body {
       font-family: 'Cairo', sans-serif;
@@ -33,61 +36,145 @@
       color: #2563eb;
       font-weight: bold;
     }
+    .sticky-btn {
+      position: sticky;
+      bottom: 10px;
+    }
   </style>
 </head>
+
 <body class="flex items-center justify-center min-h-screen p-6">
-  <main class="max-w-lg w-full bg-white rounded-2xl shadow-xl p-8 text-center">
-    
-    <!-- الصورة الدائرية -->
+  <main class="max-w-lg w-full bg-white rounded-2xl shadow-xl p-8 text-center relative">
+
+    <!-- Header with Language Toggle -->
+    <div class="flex justify-between items-center mb-6">
+      <h2 class="text-xl font-bold text-indigo-700">💍 Beshoy & Joly</h2>
+      <button onclick="toggleLanguage()" id="langBtn" class="text-sm text-indigo-600 underline hover:text-indigo-800">
+        🌐 عربي
+      </button>
+    </div>
+
+    <!-- Image -->
     <div class="flex justify-center mb-6">
-      <img src="photo.jpg" alt="صورتنا" class="w-40 h-40 rounded-full object-cover shadow-lg border-4 border-white" />
+      <img src="photo.jpg" alt="Our photo" class="w-40 h-40 rounded-full object-cover shadow-lg border-4 border-white" alt="Our photo" onerror="this.style.display='none';"/>
     </div>
 
-    <!-- النص -->
-    <h1 class="text-2xl font-bold mb-2 text-indigo-700">يشرفنا دعوتكم لمشاركتنا فرحتنا 💍</h1>
-    <p class="text-gray-600 mb-4">تلبيس الدبل — حضوركم يفرّحنا ويزيد مناسبتنا نورًا.</p>
+    <!-- English Content (default) -->
+    <div id="en-content">
+      <p class="mt-2 mb-4 font-semibold text-indigo-700">
+        "Then he entered, greeted him, and said: 'May you have everlasting joy.'" (Tobit 11:17)
+      </p>
 
-    <ul class="text-right mb-6 space-y-2">
-      <li><span class="font-semibold">اليوم:</span> الخميس 18/9/2025</li>
-      <li><span class="font-semibold">الوقت:</span> 9:00 مساءً</li>
-      <li><span class="font-semibold">المكان:</span> كنيسة الأنبا أنطونيوس</li>
-    </ul>
+      <h1 class="text-2xl font-bold mb-2 text-indigo-700">
+        You're invited to our Engagement Celebration 💍
+      </h1>
+      
+      <p class="text-gray-600 mb-4">Join us as we exchange rings — your presence means a lot!</p>
 
-    <!-- العداد -->
-    <div class="mb-6">
-      <div class="text-sm text-gray-500">⏳ العد التنازلي للموعد:</div>
-      <div id="countdown" class="countdown mt-2">0 يوم • 0 ساعة • 0 دقيقة</div>
+      <ul class="mb-6 space-y-2 text-center">
+        <li><span class="font-semibold">Date:</span> Thursday, 18/09/2025</li>
+        <li><span class="font-semibold">Time:</span> 9:00 PM</li>
+        <li><span class="font-semibold">Location:</span> St. Anthony Church</li>
+        <li><a href="https://maps.app.goo.gl/m13rHYBujLcWyHY2A" target="_blank" class="text-blue-600 underline">📍 View on Google Maps</a></li>
+      </ul>
+
+      <div class="mb-6">
+        <div class="text-sm text-gray-500">⏳ Countdown to the event:</div>
+        <div id="countdown-en" class="countdown mt-2">0 days • 0 hours • 0 minutes</div>
+      </div>
+
+      <div class="sticky-btn">
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Engagement+of+Bishoy+and+Julie&dates=20250918T180000Z/20250918T190000Z&details=Ring+ceremony+at+St.+Anthony+Church&location=St.+Anthony+Church&trp=true" 
+           target="_blank" class="btn w-full">
+          <span>➕ Add to Calendar</span>
+        </a>
+      </div>
+
+      <small class="block mt-6 text-gray-400">This digital invite was lovingly crafted for you.</small>
     </div>
 
-    <!-- زر الكالندر -->
-    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=خطوبة+بيشوي+وجولي&dates=20250918T180000Z/20250918T190000Z&details=تلبيس+الدبل+في+كنيسة+الأنبا+أنطونيوس&location=كنيسة+الأنبا+أنطونيوس&trp=true" 
-       target="_blank" class="btn w-full">
-      <span>➕ أضف إلى التقويم</span>
-    </a>
+    <!-- Arabic Content (hidden by default) -->
+    <div id="ar-content" class="hidden text-center" dir="rtl">
+      <p class="mt-2 mb-4 font-semibold text-indigo-700">
+        "فَدَخَلَ وَسَلَّمَ عَلَيْهِ وَقَالَ: «لِيَكُنْ لَكَ فَرَحٌ دَائِمٌ»." (طوبيا ١١:١٧)
+      </p>
 
-    <small class="block mt-6 text-gray-400">صُممت هذه الصفحة كدعوة رقمية.</small>
+      <h1 class="text-2xl font-bold mb-2 text-indigo-700">
+        يشرفنا دعوتكم لمشاركتنا فرحتنا 💍
+      </h1>
+    
+      <p class="text-gray-600 mb-4">تلبيس الدبل — حضوركم يفرّحنا ويزيد مناسبتنا نورًا.</p>
+
+      <ul class="mb-6 space-y-2 text-center">
+        <li><span class="font-semibold">اليوم:</span> الخميس 18/9/2025</li>
+        <li><span class="font-semibold">الوقت:</span> 9:00 مساءً</li>
+        <li><span class="font-semibold">المكان:</span> كنيسة الأنبا أنطونيوس</li>
+        <li><a href="https://maps.app.goo.gl/m13rHYBujLcWyHY2A" target="_blank" class="text-blue-600 underline">📍 عرض الموقع على الخريطة</a></li>
+      </ul>
+
+      <div class="mb-6">
+        <div class="text-sm text-gray-500">⏳ العد التنازلي للموعد:</div>
+        <div id="countdown-ar" class="countdown mt-2">0 يوم • 0 ساعة • 0 دقيقة</div>
+      </div>
+
+      <div class="sticky-btn">
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=خطوبة+بيشوي+وجولي&dates=20250918T180000Z/20250918T190000Z&details=تلبيس+الدبل+في+كنيسة+الأنبا+أنطونيوس&location=كنيسة+الأنبا+أنطونيوس&trp=true" 
+           target="_blank" class="btn w-full">
+          <span>➕ أضف إلى التقويم</span>
+        </a>
+      </div>
+
+      <small class="block mt-6 text-gray-400">صُممت هذه الصفحة كدعوة رقمية.</small>
+    </div>
   </main>
 
   <script>
-    // ====== countdown to 18 Sep 2025 21:00 Cairo (UTC+3) ======
-    const eventDate = new Date('2025-09-18T21:00:00+03:00');
-    const cdEl = document.getElementById('countdown');
+    const enContent = document.getElementById('en-content');
+    const arContent = document.getElementById('ar-content');
+    const toggleBtn = document.getElementById('langBtn');
+    const cdEn = document.getElementById('countdown-en');
+    const cdAr = document.getElementById('countdown-ar');
 
+    function toggleLanguage() {
+      const isEnglish = document.documentElement.lang === 'en';
+      if (isEnglish) {
+        document.documentElement.lang = 'ar';
+        document.documentElement.dir = 'rtl';
+        enContent.classList.add('hidden');
+        arContent.classList.remove('hidden');
+        toggleBtn.innerHTML = '🌐 English';
+      } else {
+        document.documentElement.lang = 'en';
+        document.documentElement.dir = 'ltr';
+        arContent.classList.add('hidden');
+        enContent.classList.remove('hidden');
+        toggleBtn.innerHTML = '🌐 عربي';
+      }
+    }
+
+    // Countdown Logic
+    const eventDate = new Date('2025-09-18T21:00:00+03:00');
     function updateCountdown() {
       const now = new Date();
       const diff = eventDate - now;
       if (diff <= 0) {
-        cdEl.textContent = '🥳 اللحظة وصلت — ننتظركم!';
+        cdEn.textContent = '🥳 It’s time — see you there!';
+        cdAr.textContent = '🥳 اللحظة وصلت — ننتظركم!';
         return;
       }
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
       const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      cdEl.innerHTML = `${days} يوم • ${hours} ساعة • ${minutes} دقيقة`;
+      cdEn.innerHTML = `${days} days • ${hours} hours • ${minutes}
+  minutes`;
+      cdAr.innerHTML = `${days} يوم • ${hours} ساعة • ${minutes} دقيقة`;
     }
 
+    // بدء التشغيل
     updateCountdown();
     setInterval(updateCountdown, 1000);
   </script>
 </body>
 </html>
+
+      
