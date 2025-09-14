@@ -2,60 +2,70 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>دعوة تلبيس الدبل — 18/9/2025</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>دعوة خطوبة — 18/9/2025</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     body {
-      font-family: 'Tajawal', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(145deg, #6ee7b7, #3b82f6);
+      color: #333;
     }
-    /* تحسين الصورة على الموبايل */
-    @media (max-width: 768px) {
-      #heroPhoto {
-        max-height: 220px;
-        object-fit: contain;
-      }
+    .btn {
+      background: linear-gradient(135deg, #f43f5e, #ec4899);
+      color: white;
+      border-radius: 30px;
+      padding: 12px 25px;
+      text-align: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+      background-color: #d52c6d;
+    }
+    .countdown {
+      font-size: 1.5rem;
+      color: #2563eb;
+      font-weight: bold;
     }
   </style>
 </head>
-<body class="bg-gray-50 min-h-screen flex items-center justify-center p-4">
-  <main class="max-w-3xl w-full bg-white rounded-2xl shadow-xl overflow-hidden">
-    <section class="grid grid-cols-1 md:grid-cols-2">
-      <!-- image area -->
-      <div class="h-64 md:h-auto md:col-span-1">
-        <img id="heroPhoto" src="photo.jpg" alt="صورتنا" class="w-full h-full object-cover object-center" />
-      </div>
+<body class="flex items-center justify-center min-h-screen p-6">
+  <main class="max-w-lg w-full bg-white rounded-2xl shadow-xl p-8 text-center">
+    
+    <!-- الصورة الدائرية -->
+    <div class="flex justify-center mb-6">
+      <img src="photo.jpg" alt="صورتنا" class="w-40 h-40 rounded-full object-cover shadow-lg border-4 border-white" />
+    </div>
 
-      <!-- content area -->
-      <div class="p-6 md:p-10 flex flex-col justify-between">
-        <div>
-          <h1 class="text-xl md:text-3xl font-bold mb-3 leading-relaxed">يشرفنا دعوتكم لمشاركتنا فرحتنا 💍</h1>
-          <p class="text-sm md:text-base text-gray-600 mb-4">تلبيس الدبل — حضوركم يفرّحنا ويزيد مناسبتنا نورًا.</p>
+    <!-- النص -->
+    <h1 class="text-2xl font-bold mb-2 text-indigo-700">يشرفنا دعوتكم لمشاركتنا فرحتنا 💍</h1>
+    <p class="text-gray-600 mb-4">تلبيس الدبل — حضوركم يفرّحنا ويزيد مناسبتنا نورًا.</p>
 
-          <ul class="space-y-2 text-right text-sm md:text-base">
-            <li class="flex items-center justify-between"><span class="font-medium">اليوم:</span><span>الخميس 18/9/2025</span></li>
-            <li class="flex items-center justify-between"><span class="font-medium">الوقت:</span><span>9:00 مساءً</span></li>
-            <li class="flex items-center justify-between"><span class="font-medium">المكان:</span><span>كنيسة الأنبا أنطونيوس</span></li>
-          </ul>
+    <ul class="text-right mb-6 space-y-2">
+      <li><span class="font-semibold">اليوم:</span> الخميس 18/9/2025</li>
+      <li><span class="font-semibold">الوقت:</span> 9:00 مساءً</li>
+      <li><span class="font-semibold">المكان:</span> كنيسة الأنبا أنطونيوس</li>
+    </ul>
 
-          <div class="mt-6">
-            <div class="text-sm text-gray-500">⏳ العد التنازلي للموعد:</div>
-            <div id="countdown" class="mt-3 text-lg md:text-2xl font-semibold text-indigo-600"></div>
-          </div>
-        </div>
+    <!-- العداد -->
+    <div class="mb-6">
+      <div class="text-sm text-gray-500">⏳ العد التنازلي للموعد:</div>
+      <div id="countdown" class="countdown mt-2">0 يوم • 0 ساعة • 0 دقيقة</div>
+    </div>
 
-        <div class="mt-6 flex flex-col gap-3">
-          <!-- زر WhatsApp لتأكيد الحضور -->
-<!--           <a id="rsvpBtn" href="#" class="block text-center py-3 rounded-lg bg-gradient-to-r from-pink-500 to-red-500 text-white font-medium shadow-md hover:scale-105 transition">تأكيد الحضور عبر واتساب</a>
- --><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=خطوبة+بيشوي+جولي&dates=20250920T070000Z/20250920T080000Z&details=تفاصيل+الاجتماع&location=المكتب"
-   target="_blank">
-   ➕ أضف إلى الكالندر
-</a>
+    <!-- زر الكالندر -->
+    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=خطوبة+بيشوي+وجولي&dates=20250918T180000Z/20250918T190000Z&details=تلبيس+الدبل+في+كنيسة+الأنبا+أنطونيوس&location=كنيسة+الأنبا+أنطونيوس&trp=true" 
+       target="_blank" class="btn w-full">
+      <span>➕ أضف إلى التقويم</span>
+    </a>
 
-          <small class="text-gray-400 text-center">صُممت هذه الصفحة كدعوة رقمية.</small>
-        </div>
-      </div>
-    </section>
+    <small class="block mt-6 text-gray-400">صُممت هذه الصفحة كدعوة رقمية.</small>
   </main>
 
   <script>
@@ -63,22 +73,21 @@
     const eventDate = new Date('2025-09-18T21:00:00+03:00');
     const cdEl = document.getElementById('countdown');
 
-    function updateCountdown(){
+    function updateCountdown() {
       const now = new Date();
       const diff = eventDate - now;
-      if (diff <= 0) { cdEl.textContent = '🥳 اللحظة وصلت — ننتظركم!'; return; }
-      const days = Math.floor(diff / (1000*60*60*24));
-      const hours = Math.floor((diff / (1000*60*60)) % 24);
-      const minutes = Math.floor((diff / (1000*60)) % 60);
-      cdEl.textContent = `${days} يوم • ${hours} ساعة • ${minutes} دقيقة`;
+      if (diff <= 0) {
+        cdEl.textContent = '🥳 اللحظة وصلت — ننتظركم!';
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      cdEl.innerHTML = `${days} يوم • ${hours} ساعة • ${minutes} دقيقة`;
     }
-    updateCountdown(); setInterval(updateCountdown, 1000);
 
-    // ====== WhatsApp RSVP link ======
-    const phone = '201002973550';
-    const prefilled = encodeURIComponent('أحب أؤكد حضوري لفرحة لبس الدبل يوم 18/9/2025 — الله يتمم بالخير 💍');
-    const rsvpLink = `https://wa.me/${phone}?text=${prefilled}`;
-    document.getElementById('rsvpBtn').href = rsvpLink;
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
   </script>
 </body>
 </html>
